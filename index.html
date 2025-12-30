@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        .heading {
+            font-family: sans-serif;
+            color: rgb(74, 112, 93);
+            margin: 30px;
+        }
+
+        .choice-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .choice-container img {
+            cursor: pointer;
+
+        }
+        .p-c-choice-container{
+            /* background-color: aquamarine; */
+            margin: 40px;
+            
+        }
+        .player-computer-move {
+            display: flex;
+            justify-content: center;
+            width: 320px;
+            align-items: center;
+            position: relative;
+            gap: 20px;
+            left: 2vw;
+            margin: 0 auto;
+            background-color: rgb(72, 99, 96);
+            border-radius: 40px;
+            /* display: none; */
+            
+
+
+        }
+
+        .player-heading {
+            font-family: sans-serif;
+            font-size: 14px;
+            position: relative;
+            bottom: 20px;
+            left: 20px;
+
+        }
+
+        .computer-heading {
+            font-family: sans-serif;
+            font-size: 13px;
+            position: relative;
+            bottom: 20px;
+            right: 20px;
+        }
+
+        .js-rock {
+            background-color: rgb(72, 99, 96);
+            border-radius: 40px;
+            padding: 10px;
+        }
+
+        .js-paper {
+            background-color: rgb(72, 99, 96);
+            border-radius: 40px;
+            padding: 10px;
+        }
+
+        .js-scissor {
+            background-color: rgb(72, 99, 96);
+            border-radius: 40px;
+            padding: 10px;
+        }
+        .js-result{
+            font-family: sans-serif;
+            font-size: 26px;
+            font-weight: 600;
+            color: rgb(34, 49, 30);
+            text-decoration: underline;
+        }
+        .js-moves{
+             font-family: sans-serif;
+            font-size: 16px;
+            font-weight: 600;
+            color: rgb(34, 49, 30);
+            text-decoration: underline;
+        }
+        .js-score{
+            font-family: sans-serif;
+            font-size: 16px;
+            font-weight: 600;
+            color: rgb(36, 44, 56);
+        }
+        .reset-btn{
+            border: none;
+            background-color: rgb(0, 0, 0);
+            font-family: sans-serif;
+            font-size: 16px;
+            font-weight: 600;
+            color: rgb(255, 255, 255);
+            padding: 10px 13px;
+            border-radius: 20px;
+
+        }
+    </style>
+</head>
+
+<body>
+    <h1 class="heading"> Rock paper scissors</h1>
+
+    <p class="js-result">Result</p>
+
+    <div class="p-c-choice-container">
+        <div class="player-computer-move">
+            <h1 class="player-heading">You</h1>
+            <img class="js-playerMove" src="" width="51px" alt="">
+            <h1>:</h1>
+            <img class="js-computerMove" src="" width="51px" alt="">
+            <h1 class="computer-heading">Computer</h1>
+        </div>
+    </div>
+
+
+    <div class="choice-container">
+        <img class="js-rock" onclick="playGame('Rock');" src="images/rock.png" width="45px" alt="">
+
+
+        <img class="js-paper" onclick="playGame('Paper');" src="images/paper.png" width="50px" alt="">
+
+
+        <img class="js-scissor" onclick="playGame('Scissor');" src="images/scissor.png" width="51px" alt="">
+    </div>
+
+
+
+
+    <p class="js-moves">Choose something</p>
+
+
+
+    <p class="js-score"></p>
+
+    <button class="reset-btn" onclick="
+    score.wins = 0;
+    score.losses = 0;   
+    score.ties = 0;
+    localStorage.removeItem('score')
+
+    updateScoreElement();
+    computerMoveImage.src = ''
+    playerMoveImage.src = ''
+
+    document.querySelector('.js-result').innerHTML = 'Play Again'
+    ">Reset</button>
+
+
+    <!-- <button onclick="alert(`Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`);">Show Score
+    </button> -->
+
+
+    <p id="result"></p>
+    <script src="game.js">
+
+    </script>
+</body>
+
+</html>
